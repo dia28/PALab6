@@ -55,7 +55,7 @@ public class DrawingPanel extends JPanel {
         else if (getColor.equals("Blue"))
             color = Color.BLUE;
         else
-            color = new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255)); //create a transparent random Color.
+            color = new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 30 + 60)); //create a transparent random Color.
         graphics.setColor(color);
         graphics.fill(new RegularPolygon(x, y, radius, sides));
     }
