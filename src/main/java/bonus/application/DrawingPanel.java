@@ -85,18 +85,17 @@ public class DrawingPanel extends JPanel {
         });
     }
 
-    public void drawShapeListener(String shape, int x, int y){
+    public void drawShapeListener(String shape, String getColor,int x, int y){
         int radius = Integer.parseInt(frame.configPanel.getSizeField().getText()); //generate a random number
         int sides; //get the value from UI (in ConfigPanel)
+
         Color color;
 
-        String getColor = (String) frame.configPanel.getColorCombo().getSelectedItem();
-
-        if (getColor != null && getColor.equals("Red"))
+        if (getColor != null && getColor.equals("red"))
             color = Color.RED;
-        else if (getColor != null && getColor.equals("Green"))
+        else if (getColor != null && getColor.equals("green"))
             color = Color.GREEN;
-        else if (getColor != null && getColor.equals("Blue"))
+        else if (getColor != null && getColor.equals("blue"))
             color = Color.BLUE;
         else
             color = new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 30 + 60)); //create a transparent random Color.

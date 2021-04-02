@@ -31,7 +31,7 @@ public class ConfigPanel extends JPanel {
         // text field
 
         var commandLabel = new JLabel("Command: ");
-        commandField = new JTextField("",8);
+        commandField = new JTextField("",16);
 
         commandField.addActionListener(new ActionListener(){
 

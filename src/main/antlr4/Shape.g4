@@ -6,7 +6,7 @@ commands: listOfCommands EOF
 listOfCommands: (createCommand | deleteCommand)
               ;
 
-createCommand: command=commandShapeList shape=ShapeList pointX=NUMBER pointY=NUMBER;
+createCommand: command=commandShapeList shape=ShapeList pointX=NUMBER pointY=NUMBER color=COLOR;
 
 commandShapeList: (DRAW | FILL);
 
@@ -21,6 +21,12 @@ ShapeList : (CIRCLE | TRIANGLE | SQUARE)
 CIRCLE: 'circle';
 TRIANGLE: 'triangle';
 SQUARE: 'square';
+
+COLOR: 'red'
+     | 'green'
+     | 'yellow'
+     | 'random'
+     ;
 
 NUMBER: ('0'..'9')+
       ;
