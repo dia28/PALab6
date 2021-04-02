@@ -51,3 +51,18 @@ The panel must be placed at the top part of the frame. The panel must contain at
 When the users execute mouse pressed operation, a shape must be drawn at the mouse location. You must use the properties defined in the configuration panel (at least one) and generate random values for others (color, etc.).
 - [x] A control panel for managing the image being created. This panel will contains the buttons: Load, Save, Reset, Exit and it will be placed at the bottom part of the frame.
 - [x] Use a file chooser in order to specify the file where the image will be saved (or load).
+
+### Optional
+
+- [x] Implement a retained mode drawing and add support for deleting shapes.
+- [x] Add support for drawing multiple types of components. Consider creating a new panel, containing a list of available shapes.
+- [x] The configuration panel must adapt according to the type of the selected shape. Implement at least two types of shapes.
+- [x] Implement free drawing and a simple shape recognition algorithm, capable of recognizing at least lines and circles.
+
+### Bonus
+
+- [x] Create a simple grammar in order to specify commands for drawing geometric shapes, for example fill circle name,x,y,radius,color.
+- [x] The commands will be specified in a text area component. Important: parsing the strings using regular expressions or other "custom" methods is not accepted.
+Use ANTLR(or a similar library) to generate a parser for your grammar, in order to evaluate the syntax and the semantics of your commands.
+- [x] Implement various commands at your own choice, for example draw, fill, delete, etc.
+An additional bonus may be given for looping commands, like for, in order to perform a drawing several times.
