@@ -5,9 +5,9 @@ import java.awt.*;
 
 
 public class MainFrame extends JFrame {
-    ConfigPanel configPanel;
-    ControlPanel controlPanel;
-    DrawingPanel canvas;
+    public ConfigPanel configPanel;
+    public ControlPanel controlPanel;
+    public DrawingPanel canvas;
 
     public MainFrame() {
         super("My Drawing Application");

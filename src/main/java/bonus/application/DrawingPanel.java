@@ -48,6 +48,7 @@ public class DrawingPanel extends JPanel {
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
+                System.out.println(e.getPoint());
                 if (e.getModifiersEx() == MouseEvent.BUTTON2_DOWN_MASK) {
                     drawShape(e.getX(), e.getY());
                     repaint(0, 0, width, height);
@@ -84,7 +85,46 @@ public class DrawingPanel extends JPanel {
         });
     }
 
-    private void deletePolygons(int x, int y) {
+    public void drawShapeListener(String shape, int x, int y){
+        int radius = Integer.parseInt(frame.configPanel.getSizeField().getText()); //generate a random number
+        int sides; //get the value from UI (in ConfigPanel)
+        Color color;
+
+        String getColor = (String) frame.configPanel.getColorCombo().getSelectedItem();
+
+        if (getColor != null && getColor.equals("Red"))
+            color = Color.RED;
+        else if (getColor != null && getColor.equals("Green"))
+            color = Color.GREEN;
+        else if (getColor != null && getColor.equals("Blue"))
+            color = Color.BLUE;
+        else
+            color = new Color((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 30 + 60)); //create a transparent random Color.
+
+        graphics.setColor(color);
+
+        Triangle triangle = new Triangle(x, y, radius, color);
+        Square square = new Square(x, y, radius, color);
+        Circle circle = new Circle(x, y, radius, color);
+
+        switch (Objects.requireNonNull(shape)) {
+            case "triangle" -> {
+                graphics.fill(triangle);
+                add(triangle);
+            }
+            case "square" -> {
+                graphics.fill(square);
+                add(square);
+            }
+            case "circle" -> {
+                graphics.fill(circle);
+                add(circle);
+            }
+        }
+        repaint(0, 0, width, height);
+    }
+
+    public void deletePolygons(int x, int y) {
         int i = 0;
         while (i < shapesList.size())
             if (shapesList.get(i).contains(x, y)) {

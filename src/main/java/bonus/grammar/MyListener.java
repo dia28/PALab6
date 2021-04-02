@@ -1,15 +1,19 @@
 package bonus.grammar;
 
 import bonus.antlr4.ShapeBaseListener;
-import bonus.antlr4.ShapeListener;
 import bonus.antlr4.ShapeParser;
+import bonus.application.MainFrame;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-import static java.lang.System.exit;
-
 public class MyListener extends ShapeBaseListener {
+
+    final MainFrame frame;
+
+    public MyListener(MainFrame frame1) {
+        frame = frame1;
+    }
 
     @Override
     public void enterCommands(ShapeParser.CommandsContext ctx) {
@@ -29,7 +33,6 @@ public class MyListener extends ShapeBaseListener {
     @Override
     public void exitListOfCommands(ShapeParser.ListOfCommandsContext ctx) {
         super.exitListOfCommands(ctx);
-        System.out.println(ctx.getText());
     }
 
     @Override
@@ -40,7 +43,8 @@ public class MyListener extends ShapeBaseListener {
     @Override
     public void exitCreateCommand(ShapeParser.CreateCommandContext ctx) {
         super.exitCreateCommand(ctx);
-        System.out.println("create command");
+        frame.canvas.drawShapeListener(ctx.shape.getText(),Integer.parseInt(ctx.pointX.getText()),Integer.parseInt(ctx.pointY.getText()));
+        System.out.println("circle");
     }
 
     @Override
@@ -61,6 +65,10 @@ public class MyListener extends ShapeBaseListener {
     @Override
     public void exitDeleteCommand(ShapeParser.DeleteCommandContext ctx) {
         super.exitDeleteCommand(ctx);
+
+        frame.canvas.deletePolygons(Integer.parseInt(ctx.pointX.getText()),Integer.parseInt(ctx.pointY.getText()));
+
+        System.out.println("exit delete command");
     }
 
     @Override
