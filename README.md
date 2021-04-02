@@ -59,6 +59,8 @@ When the users execute mouse pressed operation, a shape must be drawn at the mou
 - [x] The configuration panel must adapt according to the type of the selected shape. Implement at least two types of shapes.
 - [x] Implement free drawing and a simple shape recognition algorithm, capable of recognizing at least lines and circles.
 
+https://user-images.githubusercontent.com/25803402/113427152-38818580-93dd-11eb-921c-8b022963cc34.mp4
+
 ### Bonus
 
 - [x] Create a simple grammar in order to specify commands for drawing geometric shapes, for example fill circle name,x,y,radius,color.
@@ -66,3 +68,7 @@ When the users execute mouse pressed operation, a shape must be drawn at the mou
 Use ANTLR(or a similar library) to generate a parser for your grammar, in order to evaluate the syntax and the semantics of your commands.
 - [x] Implement various commands at your own choice, for example draw, fill, delete, etc.
 An additional bonus may be given for looping commands, like for, in order to perform a drawing several times.
+
+Example Video:
+
+https://user-images.githubusercontent.com/25803402/113426714-8a75db80-93dc-11eb-8d61-f6d6e6880ec7.mp4
