@@ -1,0 +1,17 @@
+T__0=1
+DRAW=2
+FILL=3
+ShapeList=4
+CIRCLE=5
+TRIANGLE=6
+SQUARE=7
+NUMBER=8
+WS=9
+NL=10
+ERROR=11
+'delete'=1
+'draw'=2
+'fill'=3
+'circle'=5
+'triangle'=6
+'square'=7
