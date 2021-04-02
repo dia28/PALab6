@@ -85,8 +85,7 @@ public class DrawingPanel extends JPanel {
         });
     }
 
-    public void drawShapeListener(String shape, String getColor,int x, int y){
-        int radius = Integer.parseInt(frame.configPanel.getSizeField().getText()); //generate a random number
+    public void drawShapeListener(String shape, String getColor,int radius,int x, int y){
         int sides; //get the value from UI (in ConfigPanel)
 
         Color color;

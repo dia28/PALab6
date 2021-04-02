@@ -6,7 +6,7 @@ commands: listOfCommands EOF
 listOfCommands: (createCommand | deleteCommand)
               ;
 
-createCommand: command=commandShapeList shape=ShapeList pointX=NUMBER pointY=NUMBER color=COLOR;
+createCommand: command=commandShapeList shape=ShapeList pointX=NUMBER pointY=NUMBER size=NUMBER color=COLOR;
 
 commandShapeList: (DRAW | FILL);
 

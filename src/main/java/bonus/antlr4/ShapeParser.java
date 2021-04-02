@@ -212,6 +212,7 @@ public class ShapeParser extends Parser {
 		public Token shape;
 		public Token pointX;
 		public Token pointY;
+		public Token size;
 		public Token color;
 		public CommandShapeListContext commandShapeList() {
 			return getRuleContext(CommandShapeListContext.class,0);
@@ -256,6 +257,8 @@ public class ShapeParser extends Parser {
 			setState(20);
 			((CreateCommandContext)_localctx).pointY = match(NUMBER);
 			setState(21);
+			((CreateCommandContext)_localctx).size = match(NUMBER);
+			setState(22);
 			((CreateCommandContext)_localctx).color = match(COLOR);
 			}
 		}
@@ -299,7 +302,7 @@ public class ShapeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(23);
+			setState(24);
 			_la = _input.LA(1);
 			if ( !(_la==DRAW || _la==FILL) ) {
 			_errHandler.recoverInline(this);
@@ -355,11 +358,11 @@ public class ShapeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(25);
-			((DeleteCommandContext)_localctx).command = match(T__0);
 			setState(26);
-			((DeleteCommandContext)_localctx).pointX = match(NUMBER);
+			((DeleteCommandContext)_localctx).command = match(T__0);
 			setState(27);
+			((DeleteCommandContext)_localctx).pointX = match(NUMBER);
+			setState(28);
 			((DeleteCommandContext)_localctx).pointY = match(NUMBER);
 			}
 		}
@@ -375,14 +378,15 @@ public class ShapeParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16 \4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16!\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\2\3\3\3\3\5\3\22\n\3\3\4\3\4\3\4"+
-		"\3\4\3\4\3\4\3\5\3\5\3\6\3\6\3\6\3\6\3\6\2\2\7\2\4\6\b\n\2\3\3\2\4\5\2"+
-		"\33\2\f\3\2\2\2\4\21\3\2\2\2\6\23\3\2\2\2\b\31\3\2\2\2\n\33\3\2\2\2\f"+
-		"\r\5\4\3\2\r\16\7\2\2\3\16\3\3\2\2\2\17\22\5\6\4\2\20\22\5\n\6\2\21\17"+
-		"\3\2\2\2\21\20\3\2\2\2\22\5\3\2\2\2\23\24\5\b\5\2\24\25\7\6\2\2\25\26"+
-		"\7\13\2\2\26\27\7\13\2\2\27\30\7\n\2\2\30\7\3\2\2\2\31\32\t\2\2\2\32\t"+
-		"\3\2\2\2\33\34\7\3\2\2\34\35\7\13\2\2\35\36\7\13\2\2\36\13\3\2\2\2\3\21";
+		"\3\4\3\4\3\4\3\4\3\5\3\5\3\6\3\6\3\6\3\6\3\6\2\2\7\2\4\6\b\n\2\3\3\2\4"+
+		"\5\2\34\2\f\3\2\2\2\4\21\3\2\2\2\6\23\3\2\2\2\b\32\3\2\2\2\n\34\3\2\2"+
+		"\2\f\r\5\4\3\2\r\16\7\2\2\3\16\3\3\2\2\2\17\22\5\6\4\2\20\22\5\n\6\2\21"+
+		"\17\3\2\2\2\21\20\3\2\2\2\22\5\3\2\2\2\23\24\5\b\5\2\24\25\7\6\2\2\25"+
+		"\26\7\13\2\2\26\27\7\13\2\2\27\30\7\13\2\2\30\31\7\n\2\2\31\7\3\2\2\2"+
+		"\32\33\t\2\2\2\33\t\3\2\2\2\34\35\7\3\2\2\35\36\7\13\2\2\36\37\7\13\2"+
+		"\2\37\13\3\2\2\2\3\21";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

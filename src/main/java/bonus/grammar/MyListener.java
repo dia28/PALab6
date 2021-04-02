@@ -43,7 +43,7 @@ public class MyListener extends ShapeBaseListener {
     @Override
     public void exitCreateCommand(ShapeParser.CreateCommandContext ctx) {
         super.exitCreateCommand(ctx);
-        frame.canvas.drawShapeListener(ctx.shape.getText(),ctx.color.getText(),Integer.parseInt(ctx.pointX.getText()),Integer.parseInt(ctx.pointY.getText()));
+        frame.canvas.drawShapeListener(ctx.shape.getText(), ctx.color.getText(), Integer.parseInt(ctx.size.getText()), Integer.parseInt(ctx.pointX.getText()), Integer.parseInt(ctx.pointY.getText()));
         System.out.println("circle");
     }
 
@@ -66,7 +66,7 @@ public class MyListener extends ShapeBaseListener {
     public void exitDeleteCommand(ShapeParser.DeleteCommandContext ctx) {
         super.exitDeleteCommand(ctx);
 
-        frame.canvas.deletePolygons(Integer.parseInt(ctx.pointX.getText()),Integer.parseInt(ctx.pointY.getText()));
+        frame.canvas.deletePolygons(Integer.parseInt(ctx.pointX.getText()), Integer.parseInt(ctx.pointY.getText()));
 
         System.out.println("exit delete command");
     }
